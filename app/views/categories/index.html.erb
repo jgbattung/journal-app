@@ -7,14 +7,16 @@
     <tr>
       <th>Title</th>
       <th>Details</th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= category.name %></td>
+        <td><%= category.title %></td>
         <td><%= category.details %></td>
+        <td><%= link_to "Open Category", category %></td>
       </tr>
     <% end %>
   </tbody>
