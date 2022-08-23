@@ -16,7 +16,9 @@
       <tr>
         <td><%= category.title %></td>
         <td><%= category.details %></td>
-        <td><%= link_to "Open Category", category %></td>
+        <td><%= link_to "Open", category %></td>
+        <td><%= link_to "Edit", edit_category_path(category.id) %></td>
+        <td><%= button_to "Delete", category_path(category.id), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
