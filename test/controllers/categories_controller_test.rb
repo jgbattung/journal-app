@@ -48,9 +48,4 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to categories_url
   end
 
-  # test "Should be able to show a category and tasks associated with it" do
-  #   category = Category.create(title: 'Web Development', details: 'Listed here are the tasks related to Web Dev')
-  #   get category_url(@category)
-  # end
-
 end
