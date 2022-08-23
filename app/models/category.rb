@@ -4,4 +4,6 @@ class Category < ApplicationRecord
                     length: {maximum: 20}
     validates :details, presence: true,
                     length: {minimum: 10, maximum: 100}
+
+    has_many :tasks
 end
