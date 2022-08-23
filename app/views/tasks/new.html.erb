@@ -1,0 +1,32 @@
+<%= form_with model: [@category, @task], local: true do |f| %>
+    <p>
+        <% if @task.errors.any? %>
+            <ul>
+                <% @task.errors.full_messages.each do |message| %>
+                    <li><%= message %></l1>
+                <% end %>
+            </ul>
+        <% end %>
+    </p>
+
+    <div>
+        <%= f.label :title %><br/>
+        <%= f.text_field :title %><br/>
+    </div>
+
+    <div>
+        <%= f.label :details %><br/>
+        <%= f.text_field :details %><br/>
+    </div>
+
+    <div>
+        <%= f.label :date %><br/>
+        <%= f.date_field :date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y") %><br/>
+    </div>
+
+    <p>
+        <%= f.submit %>
+    </p>
+
+
+<% end %>

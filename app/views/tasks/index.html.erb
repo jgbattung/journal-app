@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Details</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @tasks.each do |task| %>
+            <tr>
+                <td><%= task.id %></td>
+                <td><%= task.title %></td>     
+                <td><%= task.details %></td>     
+                <td><%= task.date %></td>     
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to 'Add Task', new_category_task_path(@category) %>
+<%= link_to 'Back to Category', category_path(@category) %>
