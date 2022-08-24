@@ -12,10 +12,18 @@ end
 def create
     @task = @category.tasks.build(task_params)
     if @task.save
-        redirect_to category_tasks_path
+        redirect_to category_tasks_path, notice: 'Task was succesfully added'
     else
         render :new
     end
+end
+
+def destroy
+    @task = Task.find(params[:id])
+    if @task.present?
+        @task.destroy
+    end
+    redirect_to category_tasks_path, notice: 'Task successfully deleted'
 end
 
 private
