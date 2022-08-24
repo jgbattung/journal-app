@@ -18,6 +18,13 @@ def create
     end
 end
 
+def update
+    @task = Task.find(params[:id])
+    if @task.update(params[:task])
+        redirect_to category_tasks_path, notice: 'Task successfully edited'
+    end
+end
+
 def destroy
     @task = Task.find(params[:id])
     if @task.present?
