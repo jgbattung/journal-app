@@ -1,3 +1,36 @@
 <h1>Edit Task</h1>
 
-<%= render "form", task:@task %>
+<%= form_with model: [@category, @task], local: true do |f| %>
+    <p>
+        <% if @task.errors.any? %>
+            <ul>
+                <% @task.errors.full_messages.each do |message| %>
+                    <li><%= message %></l1>
+                <% end %>
+            </ul>
+        <% end %>
+    </p>
+
+    
+    <div class='w-50'>
+        <div class='field form-group'>
+            <%= f.text_field :title, class: 'form-control', placeholder:'Title' %><br/>
+        </div>
+
+        <div class='field form-group'>
+            <%= f.text_field :details, class: 'form-control', placeholder:'Details' %><br/>
+        </div>
+
+        <div class='field form-group'>
+            <%= f.date_field :date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %><br/>
+        </div>
+
+        <p class='field form-group'>
+            <%= f.submit class:'btn btn-success mt-2' %>
+        </p>
+    </div>
+<% end %>
+
+<div>
+  <%= link_to "Back to tasks", category_tasks_path, class:'btn btn-dark' %>
+</div>

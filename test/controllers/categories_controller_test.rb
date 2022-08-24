@@ -2,7 +2,6 @@ require "test_helper"
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    # @category = categories(:one)
     @category = Category.create(title: 'Web Development', details: 'Listed here are the tasks related to Web Dev')
   end
 
