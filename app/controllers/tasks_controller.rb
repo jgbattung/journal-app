@@ -25,9 +25,7 @@ def get_category
 end
 
 def task_params
-    params.require(:task).permit(:title, :category_id)
-    params.require(:task).permit(:details, :category_id)
-    params.require(:task).permit(:date, :category_id)
+    params.require(:task).permit(:title, :details, :date, :category_id)
 end
 
 end
