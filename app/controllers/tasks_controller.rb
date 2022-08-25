@@ -5,6 +5,10 @@ def index
     @tasks = @category.tasks
 end
 
+def show
+    @task = Task.find(params[:id])
+end
+
 def new
     @task = @category.tasks.build
 end

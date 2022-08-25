@@ -23,4 +23,16 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   #   assert_redirected_to category_tasks_path(@category)
   # end
 
+  # test "should show task" do
+
+  # end
+
+  # test "should destroy task" do
+  #   assert_difference("@category.tasks.count", -1) do
+  #     delete category_task_path(@category, task.id)
+  #   end
+
+  #   assert_redirected_to category_tasks_path
+  # end
+
 end

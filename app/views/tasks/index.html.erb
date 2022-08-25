@@ -20,8 +20,11 @@
                 <td><%= task.title %></td>     
                 <td><%= task.details %></td>     
                 <td><%= task.date %></td>
-                <td><%= link_to 'Edit', edit_category_task_path(@category, task.id), class:'btn btn-info' %></td>
-                <td><%= button_to 'Delete Task', category_task_path(@category, task.id), method: :delete, class:'btn btn-danger' %></td>
+                <td>
+                    <%= link_to 'Open', category_task_path(@category, task.id), class:'btn btn-success' %>
+                    <%= link_to 'Edit', edit_category_task_path(@category, task.id), class:'btn btn-info' %>
+                </td>  
+                <td><%= button_to 'Delete Task', category_task_path(@category, task.id), method: :delete, class:'btn btn-danger d-inline' %></td>
             </tr>
         <% end %>
     </tbody>
