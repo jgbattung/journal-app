@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/today' => 'tasks#today', as: 'today'
   resources :categories do
     resources :tasks
   end

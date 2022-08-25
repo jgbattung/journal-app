@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-    before_action :get_category
+    before_action :get_category, except: [:today]
 
 def index
     @tasks = @category.tasks
@@ -7,6 +7,10 @@ end
 
 def show
     @task = Task.find(params[:id])
+end
+
+def today
+    @tasks = Task.where(date: Date.today)
 end
 
 def new
