@@ -15,10 +15,14 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  # test "should create category" do
-  #   assert_difference("Test.count") do
-  #     post category_tasks_path(@category), params: { task: { title: 'New task', details: 'This is a new task', date: Date.today } }
-  #   end
+  test "should create task" do
+    # @task = @category.tasks.create(title: 'New Task', details: 'this is a new task', date: Date.today)
+    assert_difference("Task.count") do
+      post category_tasks_path(@category), params: { task: { title:'New Task',  details:'This is a new task', date: Date.today } }
+    end
+
+    assert_redirected_to category_tasks_path(@category)
+  end
 
   test "should show task" do
     task = @category.tasks.create(title: 'New Task', details: 'this is a new task', date: Date.today)
@@ -29,9 +33,6 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   #   assert_redirected_to category_tasks_path(@category)
   # end
 
-  # test "should show task" do
-
-  # end
 
   # test "should destroy task" do
   #   assert_difference("@category.tasks.count", -1) do
