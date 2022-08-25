@@ -20,6 +20,12 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   #     post category_tasks_path(@category), params: { task: { title: 'New task', details: 'This is a new task', date: Date.today } }
   #   end
 
+  test "should show task" do
+    task = @category.tasks.create(title: 'New Task', details: 'this is a new task', date: Date.today)
+    get category_task_path(@category, task.id)
+    assert_response :success
+  end
+
   #   assert_redirected_to category_tasks_path(@category)
   # end
 
