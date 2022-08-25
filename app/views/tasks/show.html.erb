@@ -1,3 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @task %>
+
+<%= button_to 'Delete Task', category_task_path(@category), method: :delete, class:'btn btn-danger mb-2' %>
+<%= link_to 'Back to tasks', category_tasks_path(@category), class:'btn btn-dark' %>

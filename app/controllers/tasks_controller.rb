@@ -13,6 +13,10 @@ def new
     @task = @category.tasks.build
 end
 
+def edit
+    @task = Task.find(params[:id])
+end
+
 def create
     @task = @category.tasks.build(task_params)
     if @task.save
@@ -24,7 +28,7 @@ end
 
 def update
     @task = Task.find(params[:id])
-    if @task.update(params[:task])
+    if @task.update(task_params)
         redirect_to category_tasks_path, notice: 'Task successfully edited'
     end
 end

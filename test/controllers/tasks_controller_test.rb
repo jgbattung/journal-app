@@ -30,8 +30,10 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  #   assert_redirected_to category_tasks_path(@category)
-  # end
+  test "should get edit" do
+    get edit_category_task_path(@category)
+    assert_response :success
+  end
 
 
   # test "should destroy task" do
