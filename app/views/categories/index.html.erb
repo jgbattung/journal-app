@@ -1,7 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Categories</h1>
-<%= link_to "Tasks for today", today_path, class:'btn btn-warning mb-2' %>
 
 <table class = "table table-striped table-hover">
   <thead class="thead-dark">
@@ -27,4 +26,5 @@
   </tbody>
 </table>
 
-<%= link_to "Add category", new_category_path, class:'btn btn-dark' %>
+<%= link_to "Add category", new_category_path, class:'btn btn-dark' %> <br/>
+<%= link_to "View your tasks due today", today_path, class:'btn btn-warning mt-2' %>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  # get 'home/index'
   devise_for :users
+  root 'home#index'
   get '/today' => 'tasks#today', as: 'today'
   resources :categories do
     resources :tasks
