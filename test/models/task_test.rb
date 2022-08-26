@@ -10,5 +10,10 @@ class TaskTest < ActiveSupport::TestCase
     assert new_task.save, 'Created a new task'
   end
 
+  test "should not save without title" do
+    new_task = @category.tasks.create(title: nil, details: 'This is a task', date: Date.today)
+    assert_not new_task.save, "Saved the task without a title"
+  end
+
   
 end

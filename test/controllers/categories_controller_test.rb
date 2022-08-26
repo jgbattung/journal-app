@@ -3,6 +3,9 @@ require "test_helper"
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @category = Category.create(title: 'Web Development', details: 'Listed here are the tasks related to Web Dev')
+    get '/users/sign_in'
+    sign_in users(:user_001)
+    post user_session_url
   end
 
   test "should get index" do
