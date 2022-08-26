@@ -1,4 +1,4 @@
-<div id="<%= dom_id category %>" class="jumbotron">
+<div id="<%= dom_id category %>" class="jumbotron mt-3">
   <h1 class="display-4">
     <%= category.title %>
   </h1>
@@ -6,5 +6,14 @@
   <p class="lead">
     <%= category.details %>
   </p>
+
+  <div>
+    <div>
+      <%= link_to "Edit this category", edit_category_path(@category), class:'btn btn-info' %> 
+      <%= link_to "View tasks", category_tasks_path(@category), class:'btn btn-secondary' %>
+    </div>
+    <br/>
+    <%= button_to "Delete this category", @category, method: :delete, class:'btn btn-danger' %>
+</div>
 
 </div>
