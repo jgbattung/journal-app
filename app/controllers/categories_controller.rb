@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /categories or /categories.json
   def index
@@ -13,7 +14,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Category.new
+    # @category = Category.new
+    @category = current_user.categories.build
   end
 
   # GET /categories/1/edit
@@ -22,7 +24,8 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
-    @category = Category.new(category_params)
+    # @category = Category.new(category_params)
+    @category = current_user.categories.build(category_params)
 
     respond_to do |format|
       if @category.save
@@ -56,6 +59,11 @@ class CategoriesController < ApplicationController
       format.html { redirect_to categories_url, notice: "Category was successfully deleted." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user 
+    @category = current_user.categories.find_by(id: params[:id])
+    redirect_to categories_path, notice: "Not Authorized to Edit this category" if @category.nil?
   end
 
   private
