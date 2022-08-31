@@ -6,4 +6,5 @@ class Category < ApplicationRecord
                     length: {minimum: 10, maximum: 100}
 
     has_many :tasks
+    belongs_to :user
 end
