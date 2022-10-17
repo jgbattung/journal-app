@@ -1,24 +1,33 @@
-# README
+# Journal App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+This app gives users a way to easily list down and track their goals and activities. Users can create categories and break them down into tasks. Using the Today feature, users can view their tasks that has a deadline of today.
 
-Things you may want to cover:
+## Features
+* Users can register their accounts to access the app's features
+* Users can create categories for their general goals, and add specific tasks within those categories
+* Users can edit and delete these categories and tasks for better management
+* Once finished, users can mark the tasks as complete
+* Through the today tab, users can view their tasks that are due today
 
-* Ruby version
+## Version
+```
+Ruby 3.1.2
+Rails 7.0.3.1
+```
 
-* System dependencies
+## Setup
+```
+$ bundle install
+$ rails db:setup
+```
 
-* Configuration
+## Starting the app
+```
+$ rails s
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Running the test suite
+```
+$ rails test
+```
