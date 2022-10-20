@@ -31,3 +31,19 @@ $ rails s
 ```
 $ rails test
 ```
+
+## Screens
+### Homepage
+![home](https://user-images.githubusercontent.com/100396329/196854994-6fcc5ebc-5d39-420e-90bd-2b65e05eb5da.jpg)
+
+### All Categories
+![categories-index](https://user-images.githubusercontent.com/100396329/196855063-01f26d14-7594-4594-9ec6-1718dbd5ec92.jpg)
+
+### Show Category
+![cateogry-show](https://user-images.githubusercontent.com/100396329/196855101-9b8ae856-e29d-4eca-87b1-1909943a2267.jpg)
+
+### All Tasks
+![tasks-index](https://user-images.githubusercontent.com/100396329/196855138-4931e8c8-24b1-4966-9a67-c2915b79501d.jpg)
+
+### Tasks Today
+![tasks-today](https://user-images.githubusercontent.com/100396329/196855164-9ba14711-f750-4aa3-b2fa-9792255dfc71.jpg)
