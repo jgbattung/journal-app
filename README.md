@@ -1,5 +1,9 @@
 # Journal App
 
+[View the app on heroku](https://day-one-journal.herokuapp.com/)
+<br>
+<br>
+
 ## Overview
 This app gives users a way to easily list down and track their goals and activities. Users can create categories and break them down into tasks. Using the Today feature, users can view their tasks that has a deadline of today.
 
